@@ -4,7 +4,9 @@ const http = require("http");
 
 const server = http.createServer();
 
+
 const port = process.env.SERVER_PORT_SERVER || 5000;
+
 
 server.listen(port, () => {
   console.log(`Escuchando en el puerto ${port}`);
