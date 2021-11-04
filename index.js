@@ -34,17 +34,8 @@ server.on("request", (request, response) => {
   if (request.url.includes("calculator")) {
     value1 = +urlSearchParams.get("a");
     value2 = +urlSearchParams.get("b");
-    // console.log(value1);
-    // console.log(value2);
-    if (
-      !value1 ||
-      !value2 ||
-      Number.isNaN(value1) ||
-      Number.isNaN(value2)
-      // value1.length === 0 ||
-      // value2.length === 0
-    ) {
-      console.log("error");
+
+    if (!value1 || !value2 || Number.isNaN(value1) || Number.isNaN(value2)) {
       show = `<h1>Calculadora WebService</h1>
 <h2>ERROR 404</h2>
 <div>Please, set valid input  values<div/>
@@ -61,7 +52,6 @@ server.on("request", (request, response) => {
 <div>${value1} / ${value2} = ${(value1 / value2).toFixed(2)}<div/>`;
       response.statusCode = 200;
       isOk = true;
-      console.log(isOk);
     }
   } else {
     console.log("error");
